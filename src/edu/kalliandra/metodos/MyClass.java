@@ -15,7 +15,7 @@ public class MyClass {
 
     }
 
-    public double dividir (int dividendo, int divisor) throws Exception {}
+    public double dividir (int dividendo, int divisor) throws Exception {};
 
     private void metodoprivado() {} // Este método não pode ser visto pro outras classes
 }
