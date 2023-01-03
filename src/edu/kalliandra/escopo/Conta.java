@@ -14,7 +14,7 @@ public class Conta {
         /* disponível em toda a classe*/
         System.out.println(saldo);
         /* somente o método sacar conhece esta variável*/
-        System.out.println(novoSaldo);
+        /*System.out.println(novoSaldo);*/
 
     }
 
