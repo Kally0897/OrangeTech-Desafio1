@@ -1,7 +1,9 @@
 package metodo.edu.dio;
 
-/* Crie uma aplicação que calcula a área dos 3 quadriláteros notáveis: quadrado, retângulo e trapézio
+/* Parte 1: Crie uma aplicação que calcula a área dos 3 quadriláteros notáveis: quadrado, retângulo e trapézio
 Use sobrecarga*/
+
+
 
 public class Quadrilatero {
     public static void area (double lado){
