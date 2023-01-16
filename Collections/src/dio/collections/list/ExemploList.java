@@ -78,6 +78,12 @@ public class ExemploList {
 
         System.out.println("Remova as notas menores que 7: " + notas);
 
+        System.out.println("Apague toda a lista");
+        notas.clear();
+        System.out.println(notas);
+
+        System.out.println("Confira se a lista está vazia: " + notas.isEmpty());
+
 
     }
 }
