@@ -62,7 +62,7 @@ public class ExemploList {
         System.out.println("Exiba a soma dos valores: " + soma);
         System.out.println("Exiba a média das notas: " + (soma/notas.size()));
 
-        System.out.println("Remova a nota 0: ");
+
         notas.remove(0d);
         System.out.println(notas);
 
