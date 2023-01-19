@@ -84,6 +84,8 @@ public class ExemploMap {
                 System.out.println("Modelo menos eficiente: " + modeloMenosEficiente + " - " + consumoMenosEficiente);
             }
         }
+
+        System.out.println("Exiba a soma dos consumos: ");
         Iterator<Double> iterator = carrosPopulares.values().iterator();//consigo chmar esse iterator aqui pq o retorno de carrosPopulares.value() é uma collection
         Double soma = 0d;
         while(iterator.hasNext()){
@@ -93,11 +95,12 @@ public class ExemploMap {
 
         System.out.println("Exiba a média dos consumos deste dicionário de carros: " + (soma/carrosPopulares.size()));
 
-        System.out.println(carrosPopulares);
         System.out.println("Remova os modelos com o consumo igual a 15,6 km/l: ");
         Iterator<Double> iterator1 = carrosPopulares.values().iterator();
-        while(iterator1.hasNext()){
-            if(iterator1.next().equals(15.6)) iterator1.remove();
+        while(iterator1.hasNext()) {
+            if (iterator1.next().equals(15.6)) {
+                iterator1.remove();
+            }
         }
         System.out.println(carrosPopulares);
 
@@ -112,8 +115,9 @@ public class ExemploMap {
         System.out.println(carrosPopulares1.toString());
 
         System.out.println("Exiba o dicionário ordenado pelo modelo: ");
+        //O modelo é a chave, quem ordena chave é o TreeMap
         Map<String, Double> carrosPopulares2 = new TreeMap<>(carrosPopulares1);
-        System.out.println(carrosPopulares2.toString());
+        System.out.println(carrosPopulares2);
 
         System.out.println("Apague o dicionario de carros: ");
         carrosPopulares.clear();
