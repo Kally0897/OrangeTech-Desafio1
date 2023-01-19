@@ -36,6 +36,34 @@ public class OrdenacaoMap {
             System.out.println(livro.getKey() + " - " +  livro.getValue());
         }
 
+        System.out.println("--\tOrdem alfabética dos autores\t--");
+        //De acordo com as chaves
+        //TreeMap
+        Map<String, Livro> meusLivros2 = new TreeMap<>( meusLivros1);
+        for (Map.Entry<String, Livro> livro:meusLivros2.entrySet()) {
+            System.out.println(livro.getKey() + " - " +  livro.getValue());
+        }
+
+        System.out.println("--\tOrdem alfabética nomes dos livros\t--");
+        //De acordo com os valores
+        //usaremos o TreeSext pq vamos usar o comparator
+        Set<Map.Entry<String,Livro>> meusLivros3 = new TreeSet<>(new ComparatorNome());
+        //Aqui no meu construtor eu preciso passsar o meu comparator, temos que criar lá em baixo
+        meusLivros3.addAll(meusLivros.entrySet());
+        for (Map.Entry<String, Livro> livro:meusLivros3) {
+            System.out.println(livro.getKey() + " - " +  livro.getValue());
+        }
+
+        System.out.println("--\tOrdem número de página\t--");
+        Set<Map.Entry<String, Livro>> meusLivros4 = new TreeSet<>(new ComparatorPagina());
+        meusLivros4.addAll(meusLivros.entrySet());
+        for (Map.Entry<String, Livro> livro:meusLivros4) {
+            System.out.println(livro.getKey() + " - " +  livro.getValue());
+        }
+
+
+
+
     }
 }
 
@@ -81,5 +109,22 @@ class Livro {
                 "nome='" + nome + '\'' +
                 ", paginas=" + paginas +
                 '}';
+    }
+}
+
+class ComparatorNome implements Comparator<Map.Entry<String,Livro>>{
+
+    @Override
+    public int compare(Map.Entry<String, Livro> livro1, Map.Entry<String, Livro> livro2) {
+        //Como eu tô querendo comparar por nome, vou fazer o seguinte:
+        return livro1.getValue().getNome().compareTo(livro2.getValue().getNome());
+    }
+}
+
+class ComparatorPagina implements Comparator<Map.Entry<String,Livro>>{
+
+    @Override
+    public int compare(Map.Entry<String, Livro> livro1, Map.Entry<String, Livro> livro2) {
+        return livro1.getValue().getPaginas().compareTo(livro2.getValue().getPaginas());
     }
 }
